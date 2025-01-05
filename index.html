@@ -3,11 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Yönlendirme</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            overflow: hidden;
+        }
+
+        .popup {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 190px;
+            height: 190px;
+            background-color: #ffffff;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            border-radius: 20px;
+            opacity: 0;
+            transform: scale(0);
+            animation: popupAnimation 3s forwards;
+            position: relative;
+        }
+
+        .popup img {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        @keyframes popupAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+    </style>
     <script>
-        // Sayfa yüklendiğinde hedef siteye yönlendirme
-        window.location.href = "https://million-az.online";
+        document.addEventListener("DOMContentLoaded", function () {
+           
+            setTimeout(function () {
+                window.location.href = "https://million-az.online"; // Yönlendirilmek istenen URL'yi buraya yazın
+            }, 3000); 
+        });
     </script>
 </head>
 <body>
+    <div class="popup">
+        <img src="main-logo.svg" alt="Logo">
+    </div>
 </body>
 </html>
